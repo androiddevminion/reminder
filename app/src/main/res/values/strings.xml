@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">reminder</string>
+    <string name="dismiss">dismiss</string>
+    <string name="Done">done</string>
+</resources>
