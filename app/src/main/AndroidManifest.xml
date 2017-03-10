@@ -28,6 +28,10 @@
             android:excludeFromRecents="true">
         </activity>
 
+        <activity
+            android:name=".PagerActivity">
+        </activity>
+
         <receiver
             android:name=".AlarmReceiver">
             <intent-filter>

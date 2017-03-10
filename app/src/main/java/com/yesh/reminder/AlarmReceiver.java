@@ -23,14 +23,16 @@ public class AlarmReceiver extends BroadcastReceiver {
         int id = intent.getIntExtra("id", 0);
 
         PendingIntent dismissIntent = NotificationActivity.getDismissIntent(id, context);
+        PendingIntent doneIntent = NotificationActivity.getDoneIntent(id, context);
 
 
         NotificationCompat.Builder mBuilder =
                 new NotificationCompat.Builder(context)
                         .setContentTitle("My notification")
                         .setContentText("Hello World!")
-                        .setSmallIcon(R.drawable.ic_bell_ring_grey600_18dp)
-                        .addAction(R.drawable.ic_stat_dismiss, "Dismiss", dismissIntent)
+                        .setSmallIcon(R.drawable.ic_icon_glass)
+                        .addAction(R.drawable.ic_thumb_down_black_24dp, "DISMISS", dismissIntent)
+                        .addAction(R.drawable.ic_thumb_up_black_24dp, "DONE", doneIntent)
                         .setAutoCancel(true)
                         .setPriority(Notification.PRIORITY_MAX)
                         .setWhen(0)
