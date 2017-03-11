@@ -36,4 +36,16 @@ public class Utils {
         editor.apply();
     }
 
+    public static int readSharedAmount(Context ctx, String settingName, int amountValue) {
+        SharedPreferences sharedPref = ctx.getSharedPreferences(PREFERENCES_FILE, Context.MODE_PRIVATE);
+        return sharedPref.getInt(settingName, amountValue);
+    }
+
+    public static void saveSharedAmount(Context ctx, String settingName, int amountValue) {
+        SharedPreferences sharedPref = ctx.getSharedPreferences(PREFERENCES_FILE, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putInt(settingName, amountValue);
+        editor.apply();
+    }
+
 }

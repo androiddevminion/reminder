@@ -32,6 +32,10 @@
             android:name=".PagerActivity">
         </activity>
 
+        <activity
+            android:name=".AmountSelectionScreen">
+        </activity>
+
         <receiver
             android:name=".AlarmReceiver">
             <intent-filter>

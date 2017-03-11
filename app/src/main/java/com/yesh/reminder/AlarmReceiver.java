@@ -23,7 +23,6 @@ public class AlarmReceiver extends BroadcastReceiver {
         int id = intent.getIntExtra("id", 0);
 
         PendingIntent dismissIntent = NotificationActivity.getDismissIntent(id, context);
-        PendingIntent doneIntent = NotificationActivity.getDoneIntent(id, context);
 
 
         NotificationCompat.Builder mBuilder =
@@ -32,14 +31,13 @@ public class AlarmReceiver extends BroadcastReceiver {
                         .setContentText("Hello World!")
                         .setSmallIcon(R.drawable.ic_icon_glass)
                         .addAction(R.drawable.ic_thumb_down_black_24dp, "DISMISS", dismissIntent)
-                        .addAction(R.drawable.ic_thumb_up_black_24dp, "DONE", doneIntent)
                         .setAutoCancel(true)
                         .setPriority(Notification.PRIORITY_MAX)
                         .setWhen(0)
                         .setDefaults(Notification.DEFAULT_VIBRATE | Notification.DEFAULT_SOUND)
                         .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
 
-        Intent resultIntent = new Intent(context, MainActivity.class);
+        Intent resultIntent = new Intent(context, AmountSelectionScreen.class);
 
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(context);
         stackBuilder.addParentStack(MainActivity.class);
